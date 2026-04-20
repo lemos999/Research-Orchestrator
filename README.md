@@ -20,7 +20,7 @@
 
 런타임 환경에 따라 아래의 방법을 적용합니다.
 
-* **GPTs 환경**
+* **GPTs 환경** (확장된 사고이상)
   1. 준비된 ZIP 압축 파일을 지식 영역(Knowledge)에 업로드합니다.
   2. 압축 파일 내에 있는 파일이 아닌, 압축 파일 외부에 별도로 존재하는 `AGENTS.md` 파일의 전체 내용을 복사하여 GPT의 시스템 프롬프트(Instructions) 영역에 그대로 붙여넣습니다.
 
@@ -52,7 +52,7 @@ Instead of relying on hidden context windows or prompt theater, this system forc
 
 Apply the following setup depending on your runtime environment.
 
-* **For Custom GPTs**
+* **For Custom GPTs** (Extended)
   1. Upload the provided ZIP archive to the **Knowledge** section.
   2. Copy the entire contents of the standalone `AGENTS.md` file (located outside the ZIP archive) and paste it directly into the GPT's **Instructions** field.
 
