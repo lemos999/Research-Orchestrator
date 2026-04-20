@@ -13,17 +13,20 @@
 
 ## 디렉토리 구조
 
-* `AGENTS.md`: 모델이 최우선으로 읽고 따라야 하는 최상위 운영 계약 및 실행 지침. (지식 영역 최상단 루트에 단독 배치)
-* `skills/`, `references/` 및 기타 계약 파일: 연구 워크플로우, 원고 작성, 평가 루브릭 등의 세부 모듈 파일. (하나의 ZIP 파일로 압축하여 관리)
+* `AGENTS.md`: 모델이 최우선으로 읽고 따라야 하는 최상위 운영 계약 및 실행 지침.
+* `skills/`, `references/` 및 기타 계약 파일: 연구 워크플로우, 원고 작성, 평가 루브릭 등의 세부 모듈 파일.
 
 ## 사용 방법
 
-본 시스템은 Custom GPT 또는 파일 인식이 가능한 LLM 런타임 환경에서 작동하도록 설계되었습니다.
+런타임 환경에 따라 아래의 방법을 적용합니다.
 
-1. **파일 준비**: 레포지토리 내의 `AGENTS.md` 파일을 제외한 나머지 모든 파일 및 폴더(`skills/`, `references/` 등)를 모아 하나의 ZIP 아카이브(예: `Research-Orchestrator.zip`)로 압축합니다.
-2. **파일 업로드**: GPT 설정의 지식 영역 최상단 루트에 `AGENTS.md` 파일과 압축한 ZIP 파일을 함께 업로드합니다.
-3. **시스템 프롬프트 설정**: 모델의 기본 설정에 다음과 같은 짧은 지침을 추가하여 오케스트레이션을 활성화합니다.
-   * *"작업을 시작하거나 사용자의 요청에 답하기 전에, 반드시 루트에 첨부된 `AGENTS.md` 파일을 먼저 읽고 그 안의 운영 계약을 따르시오."*
+* **GPTs 환경**
+  1. 레포지토리 내의 `skills/` 및 `references/` 폴더 등을 모아 하나의 ZIP 파일로 압축하여 지식 영역에 업로드합니다.
+  2. `AGENTS.md` 파일의 전체 내용을 복사하여 GPT의 시스템 프롬프트(Instructions) 영역에 그대로 붙여넣습니다.
+
+* **Codex 등 로컬 워크스페이스 환경**
+  1. 본 레포지토리를 클론합니다.
+  2. 터미널 등을 통해 해당 디렉토리로 이동하여 작업을 시작하면, 시스템이 작업 공간의 파일 구조를 인식하여 운영 계약이 즉시 적용됩니다.
 
 ---
 
@@ -42,14 +45,17 @@ Instead of relying on hidden context windows or prompt theater, this system forc
 
 ## Directory Structure
 
-* `AGENTS.md`: The root operating contract and primary instruction set. (Placed directly at the root of the knowledge base).
-* `skills/`, `references/`, and other contract files: Detailed modular files for workflows, manuscript assembly, and evaluation. (Packaged together into a single ZIP archive).
+* `AGENTS.md`: The root operating contract and primary instruction set.
+* `skills/`, `references/`, and other contract files: Detailed modular files for workflows, manuscript assembly, and evaluation.
 
 ## Usage
 
-This system is designed to run in a Custom GPT or any file-capable LLM runtime.
+Apply the following setup depending on your runtime environment.
 
-1. **Prepare Files**: Keep `AGENTS.md` separate. Package all other folders and files (e.g., `skills/`, `references/`) into a single ZIP archive (e.g., `Research-Orchestrator.zip`).
-2. **Upload to Knowledge Base**: Upload both the `AGENTS.md` file and the ZIP archive to the root directory of your GPT's knowledge section.
-3. **System Instructions**: Add a brief bootstrap instruction to the model's setup:
-   * *"Before starting any task or answering the user, you must read the `AGENTS.md` file attached at the root and follow its operating contract."*
+* **For Custom GPTs**
+  1. Package the `skills/` and `references/` folders into a single ZIP archive and upload it to the **Knowledge** section.
+  2. Copy the entire contents of `AGENTS.md` and paste it directly into the GPT's **Instructions** field.
+
+* **For Codex or Workspace-based Environments**
+  1. Clone this repository.
+  2. Navigate (`cd`) into the directory and begin your task. The file-based operating contract will be applied automatically within the workspace.
